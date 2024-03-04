@@ -2,4 +2,40 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    registration colors-->
+    <color name="text">#A9A9A9</color>
+    <color name="button">#C67C4E</color>
+    <color name="button_pressed">#CC9573</color>
+
+    <!--    mainfragment colors-->
+    <color name="bg">#f9f9f9</color>
+    <color name="background">#2a2a2a</color>
+    <color name="search_view">#313131</color>
+    <color name="search_view_text">#989898</color>
+    <color name="text_mainfragment">#2F4B4E</color>
+    <color name="text_location">#DDDDDD</color>
+    <color name="text_name_recycler_view">#2F2D2C</color>
+    <color name="text_description">#9B9B9B</color>
+    <color name="cost">#2F4B4E</color>
+    <color name="order">#5294ff</color>
+    <color name="purple">#9933ff</color>
+
+    <!--    detail color-->
+    <color name="name_fragment">#2F2D2C</color>
+    <color name="description">#9B9B9B</color>
+    <color name="square">#ededed</color>
+    <color name="rating">#2F2D2C</color>
+    <color name="count">#808080</color>
+    <color name="line">#EAEAEA</color>
+    <color name="description_text">#2F2D2C</color>
+    <color name="text_detail">#9B9B9B</color>
+    <color name="price_detail">#C67C4E</color>
+
+    <!--    order color-->
+    <color name="bg_types">#F2F2F2</color>
+    <color name="delivery_address">#2F2D2C</color>
+    <color name="address">#808080</color>
+    <color name="edit_address">#303336</color>
+
 </resources>

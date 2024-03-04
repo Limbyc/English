@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.valance.english.ui.fragment.StartFragment"
+        android:label="startFragment"
+        tools:layout="@layout/start_fragment">
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.valance.english.ui.fragment.MainFragment"
+        android:label="mainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_chooseCours"
+            app:destination="@id/chooseCours" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCours"
+        android:name="com.valance.english.ui.fragment.ChooseCours"
+        android:label="ChooseCours"
+        tools:layout="@layout/choosecourse">
+        <action
+            android:id="@+id/action_chooseCours_to_adultCourse"
+            app:destination="@id/adultCourse" />
+    </fragment>
+    <fragment
+        android:id="@+id/adultCourse"
+        android:name="com.valance.english.ui.fragment.AdultCorse"
+        android:label="adultCourse"
+        tools:layout="@layout/adult_course_fragment"/>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.valance.english.ui.fragment.NotificationFragment"
+        android:label="notificationFragment"
+        tools:layout="@layout/notification_fragment"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.valance.english.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+
+</navigation>

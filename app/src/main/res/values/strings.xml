@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">English</string>
+    <string name="start_text">Впервые в нашем приложении</string>
+    <string name="nachat">Начать</string>
+    <string name="notification">Notification</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="text1">Определим ваш уровень и составим план обучения</string>
+    <string name="search">Поиск слов</string>
 </resources>
