@@ -20,6 +20,7 @@
     <color name="cost">#2F4B4E</color>
     <color name="order">#5294ff</color>
     <color name="purple">#9933ff</color>
+    <color name="green">#56de47</color>
 
     <!--    detail color-->
     <color name="name_fragment">#2F2D2C</color>

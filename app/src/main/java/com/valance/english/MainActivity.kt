@@ -1,5 +1,6 @@
 package com.valance.english
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.startFragment , R.id.chooseCours , R.id.adultCourse-> {
+                R.id.startFragment , R.id.chooseCours , R.id.adultCourse, R.id.registrationFragment
+                , R.id.taskFragment, R.id.dictionaryFragment-> {
                     binding.bottomNav.visibility = View.GONE
                 }
                 else -> {

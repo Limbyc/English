@@ -27,8 +27,14 @@ class AppRepositoryImpl @Inject constructor(
         return userDao.getUserById(userId)
     }
 
+
+
     override suspend fun getAllUsers(): List<User> {
         return userDao.getAllUsers()
+    }
+
+    override suspend fun getMaxUserId(): Int?{
+        return userDao.getMaxUserId()
     }
 
     // Functions for Task entity

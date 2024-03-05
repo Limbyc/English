@@ -12,6 +12,8 @@ interface AppRepository {
     suspend fun getUserById(userId: Int): User?
     suspend fun getAllUsers(): List<User>
 
+    suspend fun getMaxUserId(): Int?
+
     // Functions for Task entity
     suspend fun getAllTasks(): List<Task>
     suspend fun updateTask(task: Task)

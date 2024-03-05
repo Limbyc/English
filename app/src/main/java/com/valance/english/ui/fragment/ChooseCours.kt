@@ -36,5 +36,8 @@ class ChooseCours: Fragment(){
         binding.relativeLayout3.setOnClickListener{
             findNavController().navigate(R.id.adultCourse)
         }
+        binding.relativeLayout4.setOnClickListener{
+            findNavController().navigate(R.id.registrationFragment)
+        }
     }
 }

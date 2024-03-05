@@ -27,6 +27,12 @@
         <action
             android:id="@+id/action_mainFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dictionaryFragment"
+            app:destination="@id/dictionaryFragment" />
     </fragment>
     <fragment
         android:id="@+id/chooseCours"
@@ -36,6 +42,9 @@
         <action
             android:id="@+id/action_chooseCours_to_adultCourse"
             app:destination="@id/adultCourse" />
+        <action
+            android:id="@+id/action_chooseCours_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
         android:id="@+id/adultCourse"
@@ -52,5 +61,20 @@
         android:name="com.valance.english.ui.fragment.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/profile_fragment"/>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.valance.english.ui.fragment.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/registration_fragment"/>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.valance.english.ui.fragment.TaskFragment"
+        android:label="TaskFragment"
+        tools:layout="@layout/task_fragment"/>
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        android:name="com.valance.english.ui.fragment.DictionaryFragment"
+        android:label="DictionaryFragment"
+        tools:layout="@layout/dictionary_fragment"/>
 
 </navigation>

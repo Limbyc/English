@@ -16,4 +16,7 @@ interface UserDao {
 
     @Query("SELECT * FROM User")
     suspend fun getAllUsers(): List<User>
+
+    @Query("SELECT MAX(id) FROM User")
+    suspend fun getMaxUserId(): Int?
 }

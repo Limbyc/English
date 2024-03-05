@@ -8,4 +8,5 @@ import com.valance.english.db.entity.Question
 interface QuestionDao {
     @Query("SELECT * FROM Question WHERE taskId = :taskId")
     suspend fun getQuestionsForTask(taskId: Int): List<Question>
+
 }

@@ -65,7 +65,7 @@ class AdultCorse: Fragment(){
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         adultViewModel.courses.observe(viewLifecycleOwner) { courses ->
-            courseAdapter.updateCourses(courses)
+            courseAdapter.updateCourses(courses.shuffled())
         }
         adultViewModel.filteredCourses.observe(viewLifecycleOwner) { filteredCourses ->
             courseAdapter.updateCourses(filteredCourses)
