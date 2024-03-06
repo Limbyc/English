@@ -34,8 +34,11 @@ class NotificationFragment: Fragment() {
 
             if (isUserLoggedIn())  {
                 val registrationInfo = RegistrationInfo("Регистрация", "Вы успешно зарегистрировались")
+                val discountInfo = RegistrationInfo("Скидка", "Вам доступна скидка в 10% на все курсы уровня английского")
+
                 val registrationInfoList: MutableList<RegistrationInfo> = mutableListOf()
                 registrationInfoList.add(registrationInfo)
+                registrationInfoList.add(discountInfo)
                 notificationAdapter = NotificationAdapter(requireContext(), registrationInfoList)
                 binding.recyclerView.adapter = notificationAdapter
                 binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())

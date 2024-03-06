@@ -51,8 +51,6 @@ class CourseAdapter(private var courses: List<Courses>) :
         }
     }
 
-
-
     override fun getItemCount() = courses.size
 
     fun updateCourses(courses: List<Courses>) {
