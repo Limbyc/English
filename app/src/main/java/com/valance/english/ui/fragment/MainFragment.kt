@@ -13,10 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.valance.english.R
 import com.valance.english.databinding.MainFragmentBinding
-import com.valance.english.db.entity.Task
 import com.valance.english.ui.adapter.TaskAdapter
+import com.valance.english.ui.adapter.VideoAdapter
 import com.valance.english.ui.viewmodels.MainViewModel
-import com.valance.english.ui.viewmodels.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -39,13 +38,7 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val videoList = listOf(R.raw.video1, R.raw.video2, R.raw.video3)
-
-//        val recyclerView: RecyclerView = binding.recyclerView
-//        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        recyclerView.layoutManager = layoutManager
-//        val videoAdapter = VideoAdapter(requireContext(), videoList)
-//        recyclerView.adapter = videoAdapter
+        setupVideoRecyclerView()
 
         val recyclerView: RecyclerView = binding.recyclerView
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -64,18 +57,39 @@ class MainFragment: Fragment() {
                 val bundle = Bundle().apply {
                     putInt("selectedTaskId", taskId)
                 }
-                findNavController().navigate(R.id.taskFragment, bundle)
+                findNavController().navigate(R.id.action_mainFragment_to_taskFragment, bundle)
             }
         })
 
         binding.order.setOnClickListener{
-            findNavController().navigate(R.id.chooseCours)
+            findNavController().navigate(R.id.action_mainFragment_to_chooseCours)
         }
 
         binding.slovar.setOnClickListener{
-            findNavController().navigate(R.id.dictionaryFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_dictionaryFragment)
         }
     }
+
+
+    private fun setupVideoRecyclerView() {
+        val videoList = listOf((R.raw.video1), (R.raw.video2), (R.raw.video3))
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        val videoAdapter = VideoAdapter(videoList, object : VideoAdapter.OnItemClickListener {
+            override fun onItemClick(videoId: Int) {
+                val bundle = Bundle().apply {
+                    putInt("selectedVideoId", videoId)
+                }
+                findNavController().navigate(R.id.action_mainFragment_to_videoFragment, bundle)
+            }
+        })
+
+        binding.recyclerView1.apply {
+            setLayoutManager(layoutManager)
+            adapter = videoAdapter
+        }
+    }
+
 
 
 }

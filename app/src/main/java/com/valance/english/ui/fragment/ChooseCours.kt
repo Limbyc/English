@@ -28,16 +28,16 @@ class ChooseCours: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.back.setOnClickListener{
-            findNavController().navigate(R.id.mainFragment)
+            findNavController().navigate(R.id.action_chooseCours_to_mainFragment)
         }
         binding.relativeLayout2.setOnClickListener{
-            findNavController().navigate(R.id.adultCourse)
+            findNavController().navigate(R.id.action_chooseCours_to_adultCourse)
         }
         binding.relativeLayout3.setOnClickListener{
-            findNavController().navigate(R.id.adultCourse)
+            findNavController().navigate(R.id.action_chooseCours_to_adultCourse)
         }
         binding.relativeLayout4.setOnClickListener{
-            findNavController().navigate(R.id.registrationFragment)
+            findNavController().navigate(R.id.action_chooseCours_to_registrationFragment)
         }
     }
 }

@@ -9,5 +9,5 @@ data class Word(
     @PrimaryKey
     var id: Int = 0,
     @ColumnInfo(name = "name")
-    var name: String,
+    var name: String
 )

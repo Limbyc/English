@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.valance.english.R
 import com.valance.english.databinding.TaskFragmentBinding
 import com.valance.english.db.entity.Question
+import com.valance.english.ui.viewmodels.DictionaryViewModel
 import com.valance.english.ui.viewmodels.TaskViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,8 +24,10 @@ class TaskFragment : Fragment() {
 
     private lateinit var binding: TaskFragmentBinding
     private val viewModel: TaskViewModel by viewModels()
+    private val dictionaryViewModel: DictionaryViewModel by viewModels()
     private val totalQuestions = 9
     private var currentQuestionIndex = 0
+    private var isKnowButtonClicked = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,6 +58,13 @@ class TaskFragment : Fragment() {
         binding.appCompatImageView5.setOnClickListener{
             showExitConfirmationDialog()
         }
+        binding.know.setOnClickListener {
+            if (!isKnowButtonClicked) {
+                dictionaryViewModel.sendIncrementEvent()
+                Log.d("aa",isKnowButtonClicked.toString() )
+//                isKnowButtonClicked = true
+            }
+        }
     }
 
     private fun showExitConfirmationDialog() {
@@ -63,7 +73,7 @@ class TaskFragment : Fragment() {
         builder.setMessage("Вы уверены, что хотите покинуть задание? Ваши текущие результаты могут быть потеряны.")
 
         builder.setPositiveButton("Да") { _, _ ->
-            findNavController().popBackStack()
+            findNavController().navigate(R.id.action_taskFragment_to_mainFragment)
         }
 
         builder.setNegativeButton("Нет") { dialog, _ ->
@@ -98,7 +108,7 @@ class TaskFragment : Fragment() {
         if (questions != null && currentQuestionIndex < questions.size) {
             displayQuestion(questions[currentQuestionIndex])
         } else {
-            findNavController().navigate(R.id.mainFragment)
+            findNavController().navigate(R.id.action_taskFragment_to_mainFragment)
         }
     }
 

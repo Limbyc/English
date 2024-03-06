@@ -12,12 +12,18 @@ import com.valance.english.db.entity.Courses
 class CourseAdapter(private var courses: List<Courses>) :
     RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
 
+    private var currentCurrency: String = "USD"
+    private var usdToRubExchangeRate: Double = 75.0
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val courseNameTextView: TextView = itemView.findViewById(R.id.courseNameTextView)
         val courseDescriptionTextView: TextView = itemView.findViewById(R.id.courseDescriptionTextView)
         val levelEnglishTextView: TextView = itemView.findViewById(R.id.levelEnglish)
     }
 
+    fun updateCurrency(currency: String) {
+        currentCurrency = currency
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.courses_element, parent, false)
@@ -27,9 +33,25 @@ class CourseAdapter(private var courses: List<Courses>) :
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val currentCourse = courses[position]
         holder.courseNameTextView.text = currentCourse.name
-        holder.courseDescriptionTextView.text = "Cost: ${currentCourse.cost} $"
+        val convertedPrice = convertCurrency(currentCourse.cost.toDouble(), currentCurrency, usdToRubExchangeRate)
+        holder.courseDescriptionTextView.text = "Cost: $convertedPrice $currentCurrency"
         holder.levelEnglishTextView.text = currentCourse.desc
     }
+
+
+    private fun convertCurrency(price: Double, targetCurrency: String, exchangeRate: Double): Double {
+        if (exchangeRate == 0.0) {
+            return price
+        }
+
+        return if (targetCurrency == "RUB") {
+            price * exchangeRate
+        } else {
+            price
+        }
+    }
+
+
 
     override fun getItemCount() = courses.size
 
@@ -38,6 +60,5 @@ class CourseAdapter(private var courses: List<Courses>) :
         notifyDataSetChanged()
         Log.d("CourseAdapter", "Received ${courses.size} courses from the database")
     }
-
 
 }

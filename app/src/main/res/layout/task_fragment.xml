@@ -120,6 +120,7 @@
         android:text="Уже знаю это слово"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:clickable="true"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView16" />

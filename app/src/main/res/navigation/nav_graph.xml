@@ -11,7 +11,9 @@
         tools:layout="@layout/start_fragment">
         <action
             android:id="@+id/action_startFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -20,19 +22,39 @@
         tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_chooseCours"
-            app:destination="@id/chooseCours" />
+            app:destination="@id/chooseCours"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_mainFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_mainFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_mainFragment_to_taskFragment"
-            app:destination="@id/taskFragment" />
+            app:destination="@id/taskFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_mainFragment_to_dictionaryFragment"
-            app:destination="@id/dictionaryFragment" />
+            app:destination="@id/dictionaryFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_mainFragment_to_startFragment"
+            app:destination="@id/startFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_mainFragment_to_videoFragment"
+            app:destination="@id/videoFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
     </fragment>
     <fragment
         android:id="@+id/chooseCours"
@@ -41,40 +63,101 @@
         tools:layout="@layout/choosecourse">
         <action
             android:id="@+id/action_chooseCours_to_adultCourse"
-            app:destination="@id/adultCourse" />
+            app:destination="@id/adultCourse"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_chooseCours_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_chooseCours_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
     </fragment>
     <fragment
         android:id="@+id/adultCourse"
         android:name="com.valance.english.ui.fragment.AdultCorse"
         android:label="adultCourse"
-        tools:layout="@layout/adult_course_fragment"/>
+        tools:layout="@layout/adult_course_fragment">
+        <action
+            android:id="@+id/action_adultCourse_to_chooseCours"
+            app:destination="@id/chooseCours"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.valance.english.ui.fragment.NotificationFragment"
         android:label="notificationFragment"
-        tools:layout="@layout/notification_fragment"/>
+        tools:layout="@layout/notification_fragment">
+        <action
+            android:id="@+id/action_notificationFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.valance.english.ui.fragment.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/profile_fragment"/>
+        tools:layout="@layout/profile_fragment">
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.valance.english.ui.fragment.RegistrationFragment"
         android:label="RegistrationFragment"
-        tools:layout="@layout/registration_fragment"/>
+        tools:layout="@layout/registration_fragment">
+        <action
+            android:id="@+id/action_registrationFragment_to_chooseCours"
+            app:destination="@id/chooseCours"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.valance.english.ui.fragment.TaskFragment"
         android:label="TaskFragment"
-        tools:layout="@layout/task_fragment"/>
+        tools:layout="@layout/task_fragment">
+        <action
+            android:id="@+id/action_taskFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
     <fragment
         android:id="@+id/dictionaryFragment"
         android:name="com.valance.english.ui.fragment.DictionaryFragment"
         android:label="DictionaryFragment"
-        tools:layout="@layout/dictionary_fragment"/>
+        tools:layout="@layout/dictionary_fragment">
+        <action
+            android:id="@+id/action_dictionaryFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.valance.english.ui.fragment.VideoFragment"
+        android:label="VideoFragment"
+        tools:layout="@layout/video_fragment">
+        <action
+            android:id="@+id/action_videoFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in_left"/>
+    </fragment>
 
 </navigation>

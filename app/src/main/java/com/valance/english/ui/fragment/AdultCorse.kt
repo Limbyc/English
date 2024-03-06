@@ -28,6 +28,8 @@ class AdultCorse: Fragment(){
     private val adultViewModel: AdultViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var courseAdapter: CourseAdapter
+    private var selectedCurrency: String = "USD"
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,7 +57,7 @@ class AdultCorse: Fragment(){
         tabLayout?.addOnTabSelectedListener(createTabListener())
 
         binding.appCompatImageView2.setOnClickListener{
-            findNavController().navigate(R.id.chooseCours)
+            findNavController().navigate(R.id.action_adultCourse_to_chooseCours)
         }
 
         recyclerView = binding.recyclerView
@@ -71,7 +73,23 @@ class AdultCorse: Fragment(){
             courseAdapter.updateCourses(filteredCourses)
         }
         adultViewModel.getAllCourses()
+
+        binding.USD.setOnClickListener {
+            selectedCurrency = "USD"
+            updateUIForSelectedCurrency()
+        }
+
+        binding.RUB.setOnClickListener {
+            selectedCurrency = "RUB"
+            updateUIForSelectedCurrency()
+        }
+
     }
+
+    private fun updateUIForSelectedCurrency() {
+        courseAdapter.updateCurrency(selectedCurrency)
+    }
+
 
     private fun createTabView(text: String): View {
         val customTabView = LayoutInflater.from(context).inflate(R.layout.type_of_course, null) as TextView

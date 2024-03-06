@@ -50,7 +50,7 @@ class RegistrationFragment :Fragment() {
 
                         registrationViewModel.insertUser(user)
                         Log.d("dadada", maxId.toString())
-                        findNavController().navigate(R.id.mainFragment)
+                        findNavController().navigate(R.id.action_registrationFragment_to_mainFragment)
                         Log.d("Registration", "success")
                     } catch (e: Exception) {
                         Log.d("Registration", "failed")
@@ -65,7 +65,7 @@ class RegistrationFragment :Fragment() {
 
 
         binding.appCompatImageView4.setOnClickListener{
-            findNavController().navigate(R.id.chooseCours)
+            findNavController().navigate(R.id.action_registrationFragment_to_chooseCours)
         }
     }
 }

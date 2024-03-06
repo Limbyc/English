@@ -4,6 +4,7 @@ import com.valance.english.db.entity.Courses
 import com.valance.english.db.entity.Question
 import com.valance.english.db.entity.Task
 import com.valance.english.db.entity.User
+import com.valance.english.db.entity.Word
 
 interface AppRepository {
 
@@ -13,6 +14,11 @@ interface AppRepository {
     suspend fun getAllUsers(): List<User>
 
     suspend fun getMaxUserId(): Int?
+
+    // Functions for Word entity
+    suspend fun getAllWords(): List<Word>
+
+    suspend fun getWordCount(): Int
 
     // Functions for Task entity
     suspend fun getAllTasks(): List<Task>

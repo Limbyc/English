@@ -7,6 +7,7 @@ import com.valance.english.db.dao.CoursesDao
 import com.valance.english.db.dao.QuestionDao
 import com.valance.english.db.dao.TaskDao
 import com.valance.english.db.dao.UserDao
+import com.valance.english.db.dao.WordDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +30,11 @@ object DatabaseModule{
     @Provides
     fun provideQuestionDao(database: AppDatabase): QuestionDao {
         return database.questionDao()
+    }
+
+    @Provides
+    fun provideWordDao(database: AppDatabase): WordDao {
+        return database.wordDao()
     }
 
     @Provides

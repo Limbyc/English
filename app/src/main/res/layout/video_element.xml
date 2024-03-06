@@ -7,23 +7,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         app:cardCornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <VideoView
-            android:id="@+id/videoView"
-            android:layout_width="match_parent"
-            android:layout_height="180dp" />
-
-        <Button
-            android:id="@+id/playPauseButton"
+        <ImageView
+            android:id="@+id/thumbnailImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="#00000000" />
+            android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
 
