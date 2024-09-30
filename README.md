@@ -1,5 +1,5 @@
 ## English 
-a mobile application that helps you learn English like SkyEnglish
+A mobile app aimed at self-development with a focus on English as SkyEnglish
 ## Architecture
 This application follows the classic SOLID based clean architecture approach. This approach differs from official architecture guidance, but it is actively used by many developers.
 ## Features
